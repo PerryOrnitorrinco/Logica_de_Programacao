@@ -27,6 +27,20 @@ com a função 'main' sendo executada ao mesmo tempo. Ao excluir um dos arquivos
 
 -------------------------------------------------------------------------------------------------------------------
 
+Erro: Alguns 'scanf' estão sendo ignorados pelo programa, mesmo não apresentando erro na hora da compilação: Eu havia
+solicitado que o usuário inserisse com o que o mesmo trabalha e coloquei apenas '%s', fazendo com que o scanf lê-se
+apenas a primeira palavra, pois o formato '%s' lê apenas uma sequência de caracteres ininterruptos, sendo que na
+informação solicitada, possivelmente haveria a digitação de um 'espaço'. 
+Resolvi isso trocando o formato '%s' por '[^\n]', que lê toda uma sequência de caracteres, até mesmo a tecla espaço,
+até que encontre uma tecla de quebra de linha, o 'Enter'. Feito a troca, evidenciou-se que o scanf que estava funcionando:
+o de trabalho, parou de funcionar, porém o scanf que estava sendo ignorado: o que perguntava sobre filhos, foi executado
+pelo programa e que, o scanf sobre escolaridade ainda continuava ignorado, porém, isso foi resolvido colocando o comando
+getchar(); após cada um dos scanf que solicitasse uma sequência de caracteres, para que o buffer fosse limpo e o scanf
+seguinte não lesse o 'Enter' como a resposta.
+
+------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 */
