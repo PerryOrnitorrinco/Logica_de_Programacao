@@ -40,7 +40,10 @@ seguinte não lesse o 'Enter' como a resposta.
 
 ------------------------------------------------------------------------------------------------------------------------
 
-
+Erro: Value required as left operand of assignment: É um erro sintático de comparação e atribuição. Para se atribuir um valor
+à uma variável, utiliza-se apenas um sinal de Igual (=) e para se comparar um valor de uma varíavel, utiliza-se dois sinais de
+Igual (==). Assim que o sinal for trocado para o correto - provavelmente está tentando atribuir um valor (=) quando o objetivo é
+comparar um valor (==), por exemplo no IF - o erro sumirá.
 
 
 */
