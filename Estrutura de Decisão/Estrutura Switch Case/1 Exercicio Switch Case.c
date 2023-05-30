@@ -92,6 +92,8 @@ int main() {
 		
 		printf("Resposta Invalida!");
 		
+		return 0;
+		
 	}
 	
 	getchar();
@@ -139,6 +141,8 @@ int main() {
 		
 		printf("\n");
 		printf("Resposta invalida!");
+		
+		return 0;
 		
 	}
 	
