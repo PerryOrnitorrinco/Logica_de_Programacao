@@ -45,5 +45,11 @@ Erro: Value required as left operand of assignment: É um erro sintático de com
 Igual (==). Assim que o sinal for trocado para o correto - provavelmente está tentando atribuir um valor (=) quando o objetivo é
 comparar um valor (==), por exemplo no IF - o erro sumirá.
 
+-----------------------------------------------------------------------------------------------------------------------------
+
+Erro: a label can only be part of a statement and a declaration is not a statement: Erro ocorre quando você tenta declarar uma
+varíavel em um local que não é permitido a ação. Para corrigir esse erro, basta mover a declaração da varíavel, para um local
+em que é permitida sua declaração, como o inicio do programa, por exemplo.
+
 
 */
