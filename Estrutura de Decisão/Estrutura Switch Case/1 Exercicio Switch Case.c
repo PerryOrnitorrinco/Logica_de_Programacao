@@ -3,23 +3,25 @@
 
 int main() {
 	
-	int mesa;
+	int mesa;						/* Delcaração de Varíaveis */
 	char resp, menu, categoria;
 
-	printf("----------------------------------\n");
+	printf("----------------------------------\n");		/* Cabeçalho a ser mostrado no início do programa */
 	printf("Bem Vindo ao Restaurante do Gordao\n");
 	printf("----------------------------------\n");
 	
-	printf("\nMesa para quantas pessoas? (1 a 4) ");
+	printf("\nMesa para quantas pessoas? (1 a 4) ");	/* Inicio do programa, efetuando a primeira pergunta para o usuário. */
 	scanf("%d", &mesa);
 	
 	printf("\n");
 	
-	getchar();
+	getchar();											/* Função utilizada para limpar o buffer da tecla 'Enter' para evitar que a mesma seja lida
+														no proximo 'scanf'. */
 	
-	switch(mesa) {
+	switch(mesa) {										/* Chamada da função 'Switch' para verificar as respostas dadas pelo usuário. */
 		
-		case 1:
+		case 1:											/* Caso a resposta do usuário seja apenas 1 pessoa, o programa irá perguntar se o usuário
+														pode ser direcionado ao balcão ou se realmente há a necessidade de uma mesa. */
 			
 			printf("Poderia ser o balcao, ou e realmente necessario uma mesa? (B / M) ");
 			scanf("%c", &resp);
@@ -68,7 +70,10 @@ int main() {
 	
 	printf("\n");
 	
-	if ( mesa != 1) {
+	if ( mesa != 1) {									/* Função 'IF' chamada para verificar qual a resposta do usuário em relação à quantas */
+														/* pessoas irão se sentar à mesa, para uma proxima pergunta mais "personalizada". Caso */
+														/* seja apenas uma pessoa, a pergunta será feita no singular; caso seja mais de uma pessoa,*/
+														/* a pergunta sera feita no plural. */
 		
 		printf("Voces querem o Menu agora ou depois? (A / D) ");
 		scanf(" %c", &menu);
@@ -79,8 +84,6 @@ int main() {
 	
 	else { 	
 	
-		getchar();
-	
 		printf("Voce quer o Menu agora ou depois? (A / D) ");
 		scanf(" %c", &menu);
 	
@@ -88,15 +91,20 @@ int main() {
 		
 	}
 	
-	if ( menu != 'A' && menu != 'D') {
-		
+	if ( menu != 'A' && menu != 'D') {					/* Função 'IF' chamada para que, caso o usuário digite algo que não seja as respostas */
+														/* "corretas"" o programa diga que a resposta é invalida e se encerre. */
+														
 		printf("Resposta Invalida!");
+		
+		return 0;
 		
 	}
 	
 	getchar();
 	
-	if ( mesa == 1 && menu == 'A') {
+	if ( mesa == 1 && menu == 'A') {					/* Duas funções 'IF' chamadas para verificar duas coisas: o número de pessoas da mesa E a */
+														/* resposta à pergunta referente ao Menu. Novamente, para responder de uma maneira mais */
+														/* personalizada. */
 				
 		printf("Aqui esta seu Menu.");
 				
@@ -124,7 +132,8 @@ int main() {
 	
 	printf("Voce abre o Menu e ve as seguintes categorias:\n\n");
 	
-	categorias:
+	categorias:											/* Label que eu não sei ainda se funciona, colocada aqui pra tentar utilizar o 'goto' para */
+														/* quando o usuário escolher um produto, caso queira, voltar pra escolher outro. */
 		
 		printf("Entrada.\n");
 		printf("Principal.\n");
@@ -135,16 +144,21 @@ int main() {
 	printf("Qual categoria gostaria de olhar? (E / P / B) ");
 	scanf(" %c", &categoria);
 	
-	if ( categoria != 'E' && categoria != 'P' && categoria != 'B') {
+	if ( categoria != 'E' && categoria != 'P' && categoria != 'B') {	/* Função 'IF' utilizada para verificar a resposta do usuário e, caso não */
+														/* não seja as respostas "corretas", será dito que a resposta é inválida e o programa será */
+														/* encerrado. */
 		
 		printf("\n");
 		printf("Resposta invalida!");
+		
+		return 0;
 		
 	}
 	
 	printf("\n");
 	
-	switch (categoria) {
+	switch (categoria) {								/* Função 'Switch' utilizada para verificar a resposta do usuário e mostrar as opções da */
+														/* categoria correspondente à escolha do mesmo. */
 		
 		case 'E':
 			
