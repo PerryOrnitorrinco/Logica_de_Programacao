@@ -3,8 +3,9 @@
 
 int main() {
 	
-	int mesa;						/* Delcaração de Varíaveis */
-	char resp, menu, categoria;
+	int mesa;											/* Declaração de Varíaveis */
+	int escolhaEntrada, escolhaPrincipal, escolhaBebida;
+	char resp, menu, categoria, outraCat;
 
 	printf("----------------------------------\n");		/* Cabeçalho a ser mostrado no início do programa */
 	printf("Bem Vindo ao Restaurante do Gordao\n");
@@ -130,12 +131,12 @@ int main() {
 	
 	printf("\n\n\n");
 	
-	printf("Voce abre o Menu e ve as seguintes categorias:\n\n");
+	printf("Voce abre o Menu e ve as seguintes categorias:");
 	
 	categorias:											/* Label que eu não sei ainda se funciona, colocada aqui pra tentar utilizar o 'goto' para */
 														/* quando o usuário escolher um produto, caso queira, voltar pra escolher outro. */
 		
-		printf("Entrada.\n");
+		printf("Entrada.\n");                                       
 		printf("Principal.\n");
 		printf("Bebida.\n");
 	
@@ -164,11 +165,43 @@ int main() {
 			
 			printf("No Menu das Entradas voce tem as seguintes opcoes:\n\n");
 			
-			printf("Iscas de Tilapia\n");
-			printf("Bolinhas de Queijo\n");
-			printf("Batata Frita com Cheddar e Bacon\n");
-			printf("Mandioca Frita\n");
-			printf("Calabresa Acebolada\n");
+			printf("1 - Iscas de Tilapia\n");
+			printf("2 - Bolinhas de Queijo\n");
+			printf("3 - Batata Frita com Cheddar e Bacon\n");
+			printf("4 - Mandioca Frita\n");
+			printf("5 - Calabresa Acebolada\n");
+			
+			printf("\n\n");
+			
+			printf("Voce gostaria de pedir algum dos pratos? Se sim, digite o numero do prato; se nao, digite 0. ");
+			scanf("%d", &escolhaEntrada);
+			
+			printf("\n");
+			
+			if ( escolhaEntrada == 0) {
+				
+				printf("Tudo bem. Gostaria de olhar uma outra categoria? (S / N) ");
+				scanf(" %c", &outraCat);
+				
+				if ( outraCat == 'S') {
+					
+					printf("\n");
+				
+					goto categorias;
+				
+			}
+			
+			else {
+				
+				printf("\n");
+				
+				printf("Ok, volto depois.");
+				
+				return 0;
+				
+			}
+				
+			}			
 			
 		break;
 		
@@ -176,11 +209,43 @@ int main() {
 			
 			printf("No Menu Principal voce tem as seguintes opcoes:\n\n");
 			
-			printf("Strogonoff de Carne/Frango\n");
-			printf("Picanha na Chapa\n");
-			printf("Salada Caesar\n");
-			printf("Macarrao Carbonara\n");
-			printf("Sushi\n");
+			printf("1 - Strogonoff de Carne/Frango\n");
+			printf("2 - Picanha na Chapa\n");
+			printf("3 - Salada Caesar\n");
+			printf("4 - Macarrao Carbonara\n");
+			printf("5 - Sushi\n");
+			
+			printf("\n\n");
+			
+			printf("Voce gostaria de pedir algum dos pratos? Se sim, digite o numero do prato; se nao, digite 0. ");
+			scanf("%d", &escolhaPrincipal);
+			
+			printf("\n");
+			
+			if ( escolhaEntrada == 0) {
+				
+				printf("Tudo bem. Gostaria de olhar uma outra categoria? (S / N) ");
+				scanf(" %c", &outraCat);
+				
+				if ( outraCat == 'S') {
+					
+					printf("\n");
+				
+					goto categorias;
+				
+			}
+			
+			else {
+				
+				printf("\n");
+				
+				printf("Ok, volto depois.");
+				
+				return 0;
+				
+			}
+				
+			}
 			
 		break;
 		
@@ -188,15 +253,49 @@ int main() {
 			
 			printf("No Menu das Bebidas voce tem as seguintes opcoes:\n\n");
 			
-			printf("Refrigerante de Lata\n");
-			printf("Suco de Polpa\n");
-			printf("Suco de Caixinha\n");
-			printf("Soda Italiana\n");
-			printf("Agua Mineral\n");
+			printf("1 - Refrigerante de Lata\n");
+			printf("2 - Suco de Polpa\n");
+			printf("3 - Suco de Caixinha\n");
+			printf("4 - Soda Italiana\n");
+			printf("5 - Agua Mineral\n");
+			
+			printf("\n\n");
+			
+			printf("Voce gostaria de pedir alguma das bebidas? Se sim, digite o numero da bebida; se nao, digite 0. ");
+			scanf("%d", &escolhaBebida);
+			
+			printf("\n");
+			
+			if ( escolhaEntrada == 0) {
+				
+				printf("Tudo bem. Gostaria de olhar uma outra categoria? (S / N) ");
+				scanf(" %c", &outraCat);
+				
+				if ( outraCat == 'S') {
+					
+					printf("\n");
+				
+					goto categorias;
+				
+			}
+			
+			else {
+				
+				printf("\n");
+				
+				printf("Ok, volto depois.");
+				
+				return 0;
+				
+			}
+				
+			}
 			
 		break;
 		
 	}
+	
+	printf("Entao, para confirmar");
 		
 	system("pause");
 	return 0;
