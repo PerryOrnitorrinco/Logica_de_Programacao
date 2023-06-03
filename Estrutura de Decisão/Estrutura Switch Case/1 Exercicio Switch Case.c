@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() {
 	
 	int mesa;											/* Declaração de Varíaveis */
-	int escolhaEntrada, escolhaPrincipal, escolhaBebida;
+	int opcaoEntrada, opcaoPrincipal, opcaoBebida;
 	char resp, menu, categoria, outraCat;
+	char escolhaEntrada[50], escolhaPrincipal[50], escolhaBebida[50];
 
 	printf("----------------------------------\n");		/* Cabeçalho a ser mostrado no início do programa */
 	printf("Bem Vindo ao Restaurante do Gordao\n");
@@ -133,8 +135,8 @@ int main() {
 	
 	printf("Voce abre o Menu e ve as seguintes categorias:");
 	
-	categorias:											/* Label que eu não sei ainda se funciona, colocada aqui pra tentar utilizar o 'goto' para */
-														/* quando o usuário escolher um produto, caso queira, voltar pra escolher outro. */
+	categorias:											/* Label colocada para utilizar o 'goto' para quando o usuário não escolher um produto, */
+														/* caso queira, voltar pra escolher outro. */
 		
 		printf("Entrada.\n");                                       
 		printf("Principal.\n");
@@ -174,11 +176,11 @@ int main() {
 			printf("\n\n");
 			
 			printf("Voce gostaria de pedir algum dos pratos? Se sim, digite o numero do prato; se nao, digite 0. ");
-			scanf("%d", &escolhaEntrada);
+			scanf("%d", &opcaoEntrada);
 			
 			printf("\n");
 			
-			if ( escolhaEntrada == 0) {
+			if ( opcaoEntrada == 0) {
 				
 				printf("Tudo bem. Gostaria de olhar uma outra categoria? (S / N) ");
 				scanf(" %c", &outraCat);
@@ -218,11 +220,11 @@ int main() {
 			printf("\n\n");
 			
 			printf("Voce gostaria de pedir algum dos pratos? Se sim, digite o numero do prato; se nao, digite 0. ");
-			scanf("%d", &escolhaPrincipal);
+			scanf("%d", &opcaoPrincipal);
 			
 			printf("\n");
 			
-			if ( escolhaEntrada == 0) {
+			if ( opcaoEntrada == 0) {
 				
 				printf("Tudo bem. Gostaria de olhar uma outra categoria? (S / N) ");
 				scanf(" %c", &outraCat);
@@ -262,11 +264,11 @@ int main() {
 			printf("\n\n");
 			
 			printf("Voce gostaria de pedir alguma das bebidas? Se sim, digite o numero da bebida; se nao, digite 0. ");
-			scanf("%d", &escolhaBebida);
+			scanf("%d", &opcaoBebida);
 			
 			printf("\n");
 			
-			if ( escolhaEntrada == 0) {
+			if ( opcaoEntrada == 0) {
 				
 				printf("Tudo bem. Gostaria de olhar uma outra categoria? (S / N) ");
 				scanf(" %c", &outraCat);
@@ -295,7 +297,141 @@ int main() {
 		
 	}
 	
-	printf("Entao, para confirmar");
+	printf("Certo, anotado. Gostaria de olhar uma outra categoria? (S / N) "); /* 'Printf' utilizado para que, após o usuário fazer seu pedido, */
+														/* voltar para a seleção de categorias, caso queira pedir algo das outras categorias */
+	scanf(" %c", &outraCat);
+	
+	if ( outraCat == 'S') {
+		
+		printf("\n");
+		goto categorias;
+		
+	}
+	
+	switch ( opcaoEntrada) {							/* Funções 'Switch' utilizadas para verificar a resposta do usuário sobre o produto */
+														/* escolhido e transformar o número informado em uma string - o nome do produto.  */ 
+		
+		case 1:
+			
+			strcpy (escolhaEntrada, "Iscas de Tilapia");
+			
+			break;
+			
+		case 2:
+			
+			strcpy (escolhaEntrada, "Bolinhas de Queijo");
+			
+			break;
+			
+		case 3:
+			
+			strcpy (escolhaEntrada, "Batata Frita com Cheddar e Bacon");
+			
+			break;
+			
+		case 4:
+			
+			strcpy (escolhaEntrada, "Mandioca Frita");
+			
+			break;
+			
+		case 5:
+			
+			strcpy (escolhaEntrada, "Calabresa Acebolada");
+			
+			break;
+			
+		default:
+			
+			strcpy (escolhaEntrada, "\0");
+			
+			break;
+		
+	}
+	
+	switch ( opcaoPrincipal) {
+		
+		case 1:
+			
+			strcpy (escolhaPrincipal, "Strogonoff de Carne/Frango");
+			
+			break;
+			
+		case 2:
+			
+			strcpy (escolhaPrincipal, "Picanha na Chapa");
+			
+			break;
+			
+		case 3:
+			
+			strcpy (escolhaPrincipal, "Salada Caesar");
+			
+			break;
+			
+		case 4:
+			
+			strcpy (escolhaPrincipal, "Macarrao Carbonara");
+			
+			break;
+			
+		case 5:
+			
+			strcpy (escolhaPrincipal, "Sushi");
+			
+			break;
+			
+		default:
+			
+			strcpy (escolhaPrincipal, "\0");
+			
+			break;
+		
+	}
+	
+	switch ( opcaoBebida) {
+		
+		case 1:
+			
+			strcpy (escolhaBebida, "Refrigerante de Lata");
+			
+			break;
+			
+		case 2:
+			
+			strcpy (escolhaBebida, "Suco de Polpa");
+			
+			break;
+			
+		case 3:
+			
+			strcpy (escolhaBebida, "Suco de Caixinha");
+			
+			break;
+			
+		case 4:
+			
+			strcpy (escolhaBebida, "Soda Italiana");
+			
+			break;
+			
+		case 5:
+			
+			strcpy (escolhaBebida, "Agua Mineral");
+			
+			break;
+			
+		default:
+			
+			strcpy (escolhaBebida, "\0");
+			
+			break; 
+		
+	} 
+	
+	printf("\n");
+	
+	printf("Entao, para confirmar, seus pedidos foram:\n\n");
 		
 	system("pause");
 	return 0;
