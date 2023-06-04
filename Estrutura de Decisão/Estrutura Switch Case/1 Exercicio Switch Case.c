@@ -37,9 +37,17 @@ int main() {
 			
 			}
 				
-			else {
+			else if ( resp == 'M') {
 				
 				printf("Tudo bem entao, voce sera direcionado para uma mesa!");
+				
+			}
+			
+			else {
+				
+				printf("Resposta invalida.");
+				
+				return 0;
 				
 			}
 			
@@ -134,6 +142,8 @@ int main() {
 	printf("\n\n\n");
 	
 	printf("Voce abre o Menu e ve as seguintes categorias:");
+	
+	printf("\n\n");
 	
 	categorias:											/* Label colocada para utilizar o 'goto' para quando o usuário não escolher um produto, */
 														/* caso queira, voltar pra escolher outro. */
@@ -308,6 +318,16 @@ int main() {
 		
 	}
 	
+	else if ( outraCat != 'N') {
+		
+		printf("\n");
+		
+		printf("Resposta invalida.");
+		
+		return 0;
+		
+	}
+	
 	switch ( opcaoEntrada) {							/* Funções 'Switch' utilizadas para verificar a resposta do usuário sobre o produto */
 														/* escolhido e transformar o número informado em uma string - o nome do produto.  */ 
 		
@@ -343,7 +363,7 @@ int main() {
 			
 		default:
 			
-			strcpy (escolhaEntrada, "\0");
+			strcpy (escolhaEntrada, "");
 			
 			break;
 		
@@ -383,7 +403,7 @@ int main() {
 			
 		default:
 			
-			strcpy (escolhaPrincipal, "\0");
+			strcpy (escolhaPrincipal, "");
 			
 			break;
 		
@@ -423,7 +443,7 @@ int main() {
 			
 		default:
 			
-			strcpy (escolhaBebida, "\0");
+			strcpy (escolhaBebida, "");
 			
 			break; 
 		
@@ -431,7 +451,35 @@ int main() {
 	
 	printf("\n");
 	
-	printf("Entao, para confirmar, seus pedidos foram:\n\n");
+	printf("Entao, para confirmar, seu(s) pedido(s) foi(ram):\n\n\n");
+	
+	
+	if ( strcmp (escolhaEntrada, "") != 0 ) {			/* Funções 'IF' utilizadas para verificar se a resposta do usuário é nula em relação ao */
+														/* ao pedido da categoria e, caso não seja, o programa irá escrever na tela qual foi o */
+														/* pedido que o usuário solicitou. */
+		
+		printf("Entrada: %s", escolhaEntrada);
+		printf("\n");
+		
+	}
+	
+	if ( strcmp (escolhaPrincipal, "") != 0 ) {
+		
+		printf("Principal: %s", escolhaPrincipal);
+		printf("\n");
+		
+	}
+	
+	if ( strcmp (escolhaBebida, "") != 0 ) {
+		
+		printf("Bebida: %s", escolhaBebida);
+		printf("\n");
+		
+	}
+	
+	printf("\n\n");
+	
+	printf("Em alguns instantes os pratos estarao servidos. Tenha um otimo apetite! \n\n");
 		
 	system("pause");
 	return 0;
