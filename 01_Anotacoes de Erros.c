@@ -1,6 +1,6 @@
 /* Sintaxe:
 	
-	Sintaxe são as regras da linguagem de programação, que devem ser seguidas para que o programa funcione
+	Sintaxe são as regsras da linguagem de programação, que devem ser seguidas para que o programa funcione
 	corretamente, como por exemplo a utilização de ';' 	no fechamento das funções, ou chamada de bibliotecas
 	utilizando '#include <>'.
 	

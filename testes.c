@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 int main() {
+	setlocale(LC_ALL, "Portuguese");
+	
     char resposta;
 
-    printf("Deseja continuar? (S/N) ");
+    printf("Desejá é continúar? (S/N) ");
     scanf(" %c", &resposta);
 
     if (resposta == 'S' || resposta == 's') {
