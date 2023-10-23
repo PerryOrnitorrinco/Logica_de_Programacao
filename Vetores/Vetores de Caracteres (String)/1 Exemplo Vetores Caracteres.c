@@ -14,7 +14,7 @@ int main() {
 	printf("Resultado: %s\n\n", s);						// Chamada da função 'Printf' para escrever na tela o texto inserido no programa pelo usuário.
 	
 	printf("Digite algo (scanf aprimorado): \n");
-	scanf("%10[^\n]s", s);								// Com essa sintaxe de 'Scanf', você insere a quantidade máxima de caracteres que a função pode
+	scanf("%9[^\n]s", s);								// Com essa sintaxe de 'Scanf', você insere a quantidade máxima de caracteres que a função pode
 														// ler, impossibilitando do programa ler mais ou armazenar mais informações do que deveria na
 														// variável, podendo ocasionar um problema no futuro do código. Com a declaração "[^\n]" o
 														// programa irá ignorar a tecla "Enter" como uma tecla de leitura e a lerá apenas como terminação

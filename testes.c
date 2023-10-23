@@ -1,24 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
+#include <locale.h> //necessário para usar setlocale
+#include <wchar.h>
 
-int main() {
-	setlocale(LC_ALL, "Portuguese");
-	
-    char resposta;
-
-    printf("Desejá é continúar? (S/N) ");
-    scanf(" %c", &resposta);
-
-    if (resposta == 'S' || resposta == 's') {
-        printf("Continuando o programa...\n");
-        // Código para continuar o programa
-    } else {
-        printf("Encerrando o programa...\n");
-        exit(0);  // Encerra o programa
-    }
-
-    // Resto do código
-
-    return 0;
+int main(void)
+{
+  printf("\n****** Verificando a localidade corrente ********\n\n");
+  printf ("Localidade corrente: %s\n", setlocale(LC_ALL,NULL) );
+  printf("Não é possível usar acentuação ou ç corretamente…\n\n");
+  
+  printf("\n****** Alterando para a localidade do sistema ********\n\n");
+  
+  //alterando para o padrão do sistema operacional
+  printf("A localidade corrente agora é %s \n",setlocale(LC_ALL,""));
+  printf("Agora não tem mais problema algum!\n");
+  printf("Já posso usar acentuação e também o caracter ç…\n\n\n");
+  
+  system("pause");
+  return 0;
 }
