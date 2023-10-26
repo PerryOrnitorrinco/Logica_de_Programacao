@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h> //necessário para usar setlocale
-#include <wchar.h>
 
 int main(void)
 {

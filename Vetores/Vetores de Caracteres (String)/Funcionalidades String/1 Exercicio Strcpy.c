@@ -26,7 +26,7 @@ int main() {
 	strcpy(sobrenome, nome);
 	
 	printf("Seu nome: %s", nome);
-	printf("Seu sobrenome: %s", sobrenome);s
+	printf("Seu sobrenome: %s", sobrenome);
 
 	return 0;
 }

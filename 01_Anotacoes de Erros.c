@@ -13,8 +13,7 @@ Lista de Erros:
 
 -------------------------------------------------------------------------------------------------------------------
 
-Makefile.win has changed. Reload from disk? -- Erro dado ao compilar um programa que foi modificado. Feche e abra
-o programa e deve resolver.
+Makefile.win has changed. Reload from disk? -- Erro dado ao compilar um programa que foi modificado. Feche e abra o programa e deve resolver.
 
 -------------------------------------------------------------------------------------------------------------------
 
