@@ -8,31 +8,34 @@ int main() {
     char rua[50];
     char bairro[20];
     char cidade[20];
-    char endereco[80];
+    char endereco[80] = "";
+    char separacao[2] = " ";
 
     printf("Ola, qual o seu nome?\n");
-    fgets(nome, 20, stdin);
-    fflush(stdin);
+    scanf("%s[^\n]", nome);
+    getchar();
 
     printf("Certo %s, e qual o seu endereco? Comecando pela rua.\n", nome);
-    fgets(rua, 50, stdin);
-    getchar();
+    gets(rua);
+    fflush(stdin);
 
    
     printf("E em qual bairro a %s esta localizada?\n", rua);
-    fgets(bairro, 20, stdin);
+    scanf("%s[^\n]", bairro);
     fflush(stdin);
 
 
     printf("Bacana. E em qual cidade voce mora?\n");
-    fgets(cidade, 20, stdin);
+    scanf("%s[^\n]", cidade);
     fflush(stdin);
 
     strcat(endereco, rua);
+    strcat(endereco, separacao);
     strcat(endereco, bairro);
+    strcat(endereco, separacao);
     strcat(endereco, cidade);
     
-    printf("Entao, seu nome e %s e voce mora na %s.", nome, rua);
+    printf("Entao, seu nome e %s e voce mora na %s.", nome, endereco);
 
     return 0;
 
